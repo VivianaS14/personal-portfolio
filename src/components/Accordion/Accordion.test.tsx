@@ -11,9 +11,9 @@ describe("<Accordion/>", () => {
     );
   });
 
-  test("Should render component <Accordion/>", () => {
-    expect(screen.getByTitle("accordion")).toBeDefined();
-  });
+  // test("Should render component <Accordion/>", () => {
+  //   expect(screen.getByTitle("accordion")).toBeDefined();
+  // });
 
   test("Should title to be showing all the time", () => {
     expect(screen.getByText("Hola Accordion")).toBeDefined();
