@@ -20,24 +20,16 @@ image.navbar-brand {
 }
 
 /* Navbar links */
-.navbar-nav .nav-link.navbar-link {
+nav.navbar .navbar-nav .nav-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.8px;
-
-  color: #fff !important;
   opacity: 0.75;
 }
-
-.navbar-nav a.nav-link.navbar-link:hover,
-.active {
-  padding: 0 25px;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.8px;
-
-  color: #fff !important;
+.navbar-nav a.nav-link:hover,
+.navbar-nav a.nav-link.active {
   opacity: 1;
 }
 
