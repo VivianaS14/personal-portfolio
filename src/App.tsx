@@ -1,7 +1,9 @@
+import { NavBar } from "./components";
+
 export const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="App">
+      <NavBar />
     </div>
   );
 };
