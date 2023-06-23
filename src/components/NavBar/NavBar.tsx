@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Logo, navIcon1, navIcon2, navIcon3, HeaderImg } from "../../assets";
+import { navIcon1, navIcon2, HeaderImg } from "../../assets";
 import "./NavBar.css";
 
 export const NavBar = () => {
