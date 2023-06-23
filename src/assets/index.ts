@@ -8,4 +8,21 @@ import navIcon3 from "./img/nav-icon3.svg";
 import HeaderImg from "./img/header-img.svg";
 import Photo from "./img/photo.png";
 
-export { Logo, navIcon1, navIcon2, navIcon3, HeaderImg, Photo };
+// skills
+import meter1 from "./img/meter1.svg";
+import meter2 from "./img/meter2.svg";
+import meter3 from "./img/meter3.svg";
+import colorSharp from "./img/color-sharp.png";
+
+export {
+  Logo,
+  navIcon1,
+  navIcon2,
+  navIcon3,
+  HeaderImg,
+  Photo,
+  meter1,
+  meter2,
+  meter3,
+  colorSharp,
+};
