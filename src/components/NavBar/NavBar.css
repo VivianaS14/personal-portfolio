@@ -1,5 +1,5 @@
 /* Navbar */
-.navbar {
+nav.navbar {
   width: 100%;
   padding: 18px 0;
 
@@ -9,7 +9,7 @@
   transition: 0.32 ease-in-out;
 }
 
-.scrolled {
+nav.navbar.scrolled {
   padding: 0;
   background-color: #121212;
 }
