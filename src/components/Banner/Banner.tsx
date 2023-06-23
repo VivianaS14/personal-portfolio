@@ -54,7 +54,7 @@ export const Banner = () => {
   }, [delta, text, tick]);
 
   return (
-    <section className="banner" id="home">
+    <section className="banner" id="home" data-testid="home">
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={8} xl={6} xxl={6}>
