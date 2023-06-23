@@ -57,13 +57,10 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={6} xxl={6}>
+          <Col xs={12} md={8} xl={6} xxl={6}>
             <span className="tagline">Welcome to my Portfolio</span>
-            <h1>
-              {"Hi I'm Viviana Soriano"}
-
-              <span className="wrap">{text}</span>
-            </h1>
+            <h1>{"Hi I'm Viviana Soriano"}</h1>
+            <span className="wrap">{text}</span>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
               explicabo nulla ad repellendus ex voluptate nisi quae nihil
@@ -74,7 +71,7 @@ export const Banner = () => {
               Let's Connect <BsArrowRightCircle />
             </button>
           </Col>
-          <Col xs={12} md={6} xl={6} xxl={6}>
+          <Col xs={12} md={4} xl={6} xxl={6}>
             <img src={HeaderImg} alt="Header image" />
           </Col>
         </Row>
