@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Logo, navIcon1, navIcon2, navIcon3 } from "../../assets";
+import { Logo, navIcon1, navIcon2, navIcon3, HeaderImg } from "../../assets";
 import "./NavBar.css";
 
 export const NavBar = () => {
@@ -26,7 +26,7 @@ export const NavBar = () => {
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={Logo} alt="Logo" />
+          <img src={HeaderImg} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
@@ -63,14 +63,14 @@ export const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
-                <img src={navIcon1} alt="Icon" />
+              <a
+                href="https://www.linkedin.com/in/viviana-soriano/"
+                target="_blank"
+              >
+                <img src={navIcon1} alt="Icon LinkedIn" />
               </a>
-              <a href="#">
-                <img src={navIcon2} alt="Icon" />
-              </a>
-              <a href="#">
-                <img src={navIcon3} alt="Icon" />
+              <a href="https://github.com/VivianaS14" target="_blank">
+                <img src={navIcon2} alt="Icon Github" />
               </a>
             </div>
             <button className="vvd" onClick={() => console.log("connect")}>

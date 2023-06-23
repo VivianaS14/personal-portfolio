@@ -6,5 +6,6 @@ import navIcon3 from "./img/nav-icon3.svg";
 
 // Header - Banner
 import HeaderImg from "./img/header-img.svg";
+import Photo from "./img/photo.png";
 
-export { Logo, navIcon1, navIcon2, navIcon3, HeaderImg };
+export { Logo, navIcon1, navIcon2, navIcon3, HeaderImg, Photo };

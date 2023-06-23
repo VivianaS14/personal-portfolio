@@ -22,8 +22,7 @@
   display: inline-block;
 }
 
-.banner h1,
-.wrap {
+.banner h1 {
   margin-bottom: 20px;
   font-size: 65px;
   font-weight: 700;
@@ -34,6 +33,7 @@
 }
 
 .wrap {
+  width: auto;
   border-right: 0.08em solid #666;
 }
 

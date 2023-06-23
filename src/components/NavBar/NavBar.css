@@ -15,8 +15,8 @@ nav.navbar.scrolled {
 }
 
 /* Logo */
-image.navbar-brand {
-  width: 9%;
+.navbar-brand {
+  width: 6%;
 }
 
 /* Navbar links */
