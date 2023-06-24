@@ -1,6 +1,25 @@
+import { useMemo } from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import { meter1, meter2, meter3, colorSharp } from "../../assets";
 import Carousel from "react-multi-carousel";
+import {
+  reactLg,
+  jsLg,
+  typeScriptLg,
+  reduxLg,
+  htmlLg,
+  cssLg,
+  javaLg,
+  mysqlLg,
+  figmaLg,
+  adobexdLg,
+  gitLg,
+  navIcon2,
+  excelLg,
+  scrumLg,
+  jestLg,
+  vitestLg,
+  sassLg,
+} from "../../assets";
 import "react-multi-carousel/lib/styles.css";
 import "./Skills.css";
 
@@ -25,6 +44,80 @@ const responsive = {
 };
 
 export const Skills = () => {
+  const skills = useMemo(
+    () => [
+      {
+        skill: "React",
+        image: reactLg,
+      },
+      {
+        skill: "JavaScript",
+        image: jsLg,
+      },
+      {
+        skill: "TypeScript",
+        image: typeScriptLg,
+      },
+      {
+        skill: "Java",
+        image: javaLg,
+      },
+      {
+        skill: "MySQL",
+        image: mysqlLg,
+      },
+      {
+        skill: "Redux",
+        image: reduxLg,
+      },
+      {
+        skill: "HTML5",
+        image: htmlLg,
+      },
+      {
+        skill: "CSS3",
+        image: cssLg,
+      },
+      {
+        skill: "Sass",
+        image: sassLg,
+      },
+      {
+        skill: "Figma",
+        image: figmaLg,
+      },
+      {
+        skill: "Adobe XD",
+        image: adobexdLg,
+      },
+      {
+        skill: "Git",
+        image: gitLg,
+      },
+      {
+        skill: "GitHub",
+        image: navIcon2,
+      },
+      {
+        skill: "Excel",
+        image: excelLg,
+      },
+      {
+        skill: "Scrum",
+        image: scrumLg,
+      },
+      {
+        skill: "Jest",
+        image: jestLg,
+      },
+      {
+        skill: "Vitest",
+        image: vitestLg,
+      },
+    ],
+    []
+  );
+
   return (
     <section className="skills" id="skills">
       <Container>
@@ -33,38 +126,32 @@ export const Skills = () => {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Tempore eligendi cum unde velit. Porro ipsum sit, unde expedita
-                possimus maiores veniam sed odit consequuntur non? Consequatur
-                ab similique explicabo enim.
+                Mostly of my skills are for the frontend development, but also I
+                have been prepared for the backend, stay tuned for the new ones.
               </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
                 className="skill-slider"
               >
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Web Design</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Web Development</h5>
-                </div>
+                {skills.map(({ image, skill }) => (
+                  <div className="item">
+                    <img src={image} alt="Image" />
+                    <h5>{skill}</h5>
+                  </div>
+                ))}
               </Carousel>
             </div>
           </Col>
         </Row>
       </Container>
-      <img src={colorSharp} alt="Bg" className="background-image-left" />
+      <img
+        src={
+          "https://res.cloudinary.com/dguvbp6nw/image/upload/v1687580138/Portfolio/color-sharp_cn9nul.png"
+        }
+        alt="Bg"
+        className="background-image-left"
+      />
     </section>
   );
 };

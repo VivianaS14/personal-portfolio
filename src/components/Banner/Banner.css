@@ -2,7 +2,8 @@
   margin-top: 0;
   padding: 160px 0 100px 0;
 
-  background: top center / cover no-repeat url("../../assets/img/banner-bg.png");
+  background: top center / cover no-repeat
+    url("https://res.cloudinary.com/dguvbp6nw/image/upload/v1687580086/Portfolio/banner-bg_qaoq8o.png");
 }
 
 .tagline {

@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsArrowRightCircle } from "react-icons/bs";
-import { Photo } from "../../assets";
 import "./Banner.css";
 
 export const Banner = () => {
@@ -75,7 +74,12 @@ export const Banner = () => {
             </button>
           </Col>
           <Col xs={12} md={4} xl={6} xxl={6}>
-            <img src={Photo} alt="Header image" />
+            <img
+              src={
+                "https://res.cloudinary.com/dguvbp6nw/image/upload/v1687579511/Portfolio/photo_w8fipf.png"
+              }
+              alt="Header image"
+            />
           </Col>
         </Row>
       </Container>
