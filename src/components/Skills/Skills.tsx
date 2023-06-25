@@ -119,7 +119,7 @@ export const Skills = () => {
   );
 
   return (
-    <section className="skills" id="skills">
+    <section className="skills" id="skills" data-testid="skills-section">
       <Container>
         <Row>
           <Col>
@@ -133,6 +133,7 @@ export const Skills = () => {
                 responsive={responsive}
                 infinite={true}
                 className="skill-slider"
+                data-testid="skill-carousel"
               >
                 {skills.map(({ image, skill }) => (
                   <div className="item">
