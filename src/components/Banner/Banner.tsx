@@ -70,7 +70,9 @@ export const Banner = () => {
               Car lover.
             </p>
             <button onClick={() => console.log("connect")}>
-              Let's Connect <BsArrowRightCircle />
+              <a href="#projects">
+                See my projects <BsArrowRightCircle />
+              </a>
             </button>
           </Col>
           <Col xs={12} md={4} xl={6} xxl={6}>
