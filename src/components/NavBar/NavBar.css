@@ -82,6 +82,14 @@ nav.navbar .navbar-nav .nav-link {
   position: absolute;
 }
 
+.navbar-text a {
+  color: #fff !important;
+}
+
+.navbar-text a:hover {
+  color: #121212 !important;
+}
+
 /* Social Icons */
 .social-icon {
   display: inline-block;
