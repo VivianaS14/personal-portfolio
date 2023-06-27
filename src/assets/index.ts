@@ -21,6 +21,9 @@ import jestLg from "./img/jest-logo-svg-vector.svg";
 import vitestLg from "./img/vitest-seeklogo.com.svg";
 import sassLg from "./img/sass-logo-svg.svg";
 
+// Contact
+import contactImg from "./img/contact-img.svg";
+
 export {
   navIcon1,
   navIcon2,
@@ -41,4 +44,5 @@ export {
   jestLg,
   vitestLg,
   sassLg,
+  contactImg,
 };
