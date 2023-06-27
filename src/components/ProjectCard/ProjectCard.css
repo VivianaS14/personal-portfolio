@@ -2,7 +2,7 @@
   margin-bottom: 24px;
   position: relative;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .proj-imgbx::before {
@@ -27,6 +27,9 @@
   top: 65%;
   left: 50%;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out;
@@ -50,6 +53,29 @@
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.8px;
+}
+
+.proj-txtx a {
+  width: 35%;
+  height: 40px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background-color: #4a2fbd;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.proj-txtx ul {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.proj-txtx li {
+  list-style: none;
 }
 
 .background-image-right {
