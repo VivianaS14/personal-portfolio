@@ -72,6 +72,8 @@
 .proj-txtx ul {
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 .proj-txtx li {
@@ -85,4 +87,25 @@
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+@media screen and (max-width: 768px) {
+  .proj-txtx h4 {
+    font-size: 25px;
+  }
+
+  .proj-txtx span {
+    display: none;
+  }
+
+  .proj-txtx a {
+    width: 80%;
+    margin: 0;
+  }
+
+  .proj-txtx ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
 }
