@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsArrowRightCircle } from "react-icons/bs";
 import "./Banner.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -57,31 +58,51 @@ export const Banner = () => {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={8} xl={6} xxl={6}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1>
-              {"Hi I'm Viviana Soriano"}
-              <br />
-              <span className="wrap">{text}</span>
-            </h1>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>
+                    {"Hi I'm Viviana Soriano"}
+                    <br />
+                    <span className="wrap">{text}</span>
+                  </h1>
 
-            <p>
-              Frontend developer with over +6 months of experience developing
-              web applications with JavaScript, TypeScript and React. Music and
-              Car lover.
-            </p>
-            <button onClick={() => console.log("connect")}>
-              <a href="#projects">
-                See my projects <BsArrowRightCircle />
-              </a>
-            </button>
+                  <p>
+                    Frontend developer with over +6 months of experience
+                    developing web applications with JavaScript, TypeScript and
+                    React. Music and Car lover.
+                  </p>
+                  <button onClick={() => console.log("connect")}>
+                    <a href="#projects">
+                      See my projects <BsArrowRightCircle />
+                    </a>
+                  </button>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={4} xl={6} xxl={6}>
-            <img
-              src={
-                "https://res.cloudinary.com/dguvbp6nw/image/upload/v1687579511/Portfolio/photo_w8fipf.png"
-              }
-              alt="Header image"
-            />
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ""
+                  }
+                >
+                  <img
+                    src={
+                      "https://res.cloudinary.com/dguvbp6nw/image/upload/v1687579511/Portfolio/photo_w8fipf.png"
+                    }
+                    alt="Header image"
+                  />
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
