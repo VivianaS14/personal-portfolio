@@ -89,3 +89,26 @@
 .contact form button:hover::before {
   width: 100%;
 }
+
+.success-message {
+  padding-top: 10px;
+  font-size: 17px;
+  text-align: center;
+
+  color: #36f821;
+}
+
+.error-message {
+  padding-top: 10px;
+  font-size: 17px;
+  text-align: center;
+
+  color: #f82121;
+}
+
+.error-form {
+  padding-bottom: 7px;
+  text-align: center;
+
+  color: #f82121;
+}

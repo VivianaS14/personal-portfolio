@@ -1,25 +1,27 @@
-import { Col, Container, Row } from "react-bootstrap";
-import { contactImg } from "../../assets";
 import { useState } from "react";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import { Col, Container, Row } from "react-bootstrap";
+import { onFormUpdateValidation, formValidation } from "../../utils";
+import { Errors, Result, Status } from "../../interfaces";
+import { contactImg } from "../../assets";
 import "./FormContact.css";
 
-interface status {
-  success: boolean;
-  message: string;
-}
-
 export const FormContact = () => {
-  const [formDetails, setFormDetails] = useState({
+  const initialForm = {
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
     message: "",
-  });
+  };
+  const [formDetails, setFormDetails] = useState(initialForm);
   const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState<status>();
+  const [status, setStatus] = useState<Status | null>(null);
+  const [result, setResult] = useState<Result | undefined>();
+  const [error, setError] = useState<Errors | null>(null);
 
   const onFormUpdate = (category: string, value: string) => {
+    onFormUpdateValidation(category, value, setError);
     setFormDetails({
       ...formDetails,
       [category]: value,
@@ -28,30 +30,38 @@ export const FormContact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setButtonText("Sending...");
-    // logica envio
-    setTimeout(() => {
-      console.log(formDetails);
-    }, 5000);
+    if (formValidation(formDetails, setError)) {
+      setButtonText("Sending...");
 
-    setButtonText("Send");
-    const result = {
-      code: 200,
-    };
+      emailjs
+        .send(
+          "service_n11yh8i",
+          "template_kvlzdjq",
+          formDetails,
+          "pEHCErpfN_HcVxsKr"
+        )
+        .then(
+          (result: EmailJSResponseStatus) => setResult(result),
+          (error) => console.error(error)
+        )
+        .then(() => {
+          console.log(result);
 
-    setFormDetails({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-    if (result.code == 200) {
-      setStatus({ success: true, message: "Message sent successfully" });
+          if (result?.status === 200) {
+            setStatus({ success: true, message: "Message sent successfully" });
+          } else if (result?.status === 400) {
+            setStatus({
+              success: false,
+              message: "Something went wrong, please try again later.",
+            });
+          }
+          setFormDetails(initialForm);
+          setButtonText("Send");
+        });
     } else {
       setStatus({
         success: false,
-        message: "Something went wrong, please try again later.",
+        message: "Please complete the form before sending.",
       });
     }
   };
@@ -77,6 +87,9 @@ export const FormContact = () => {
                       }
                       placeholder="First Name"
                     />
+                    {error?.type === "firstName" && (
+                      <p className="error-form">{error.message}</p>
+                    )}
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
@@ -85,22 +98,31 @@ export const FormContact = () => {
                       onChange={(e) => onFormUpdate("lastName", e.target.value)}
                       placeholder="Last Name"
                     />
+                    {error?.type === "lastName" && (
+                      <p className="error-form">{error.message}</p>
+                    )}
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
-                      type="text"
+                      type="email"
                       value={formDetails.email}
                       onChange={(e) => onFormUpdate("email", e.target.value)}
                       placeholder="Email Address"
                     />
+                    {error?.type === "email" && (
+                      <p className="error-form">{error.message}</p>
+                    )}
                   </Col>
                   <Col size={12} sm={6} className="px-1">
                     <input
-                      type="text"
+                      type="tel"
                       value={formDetails.phone}
                       onChange={(e) => onFormUpdate("phone", e.target.value)}
                       placeholder="Phone No."
                     />
+                    {error?.type === "phone" && (
+                      <p className="error-form">{error.message}</p>
+                    )}
                   </Col>
                   <textarea
                     rows={6}
@@ -108,19 +130,20 @@ export const FormContact = () => {
                     onChange={(e) => onFormUpdate("message", e.target.value)}
                     placeholder="Message"
                   ></textarea>
+                  {error?.type === "message" && (
+                    <p className="error-form">{error.message}</p>
+                  )}
                   <button type="submit">
                     <span>{buttonText}</span>
                   </button>
 
-                  {status?.message && (
+                  {status?.success ? (
                     <Col>
-                      <p
-                        className={
-                          status.success === false ? "danger" : "success"
-                        }
-                      >
-                        {status.message}
-                      </p>
+                      <p className="success-message">{status.message}</p>
+                    </Col>
+                  ) : (
+                    <Col>
+                      <p className="error-message">{status?.message}</p>
                     </Col>
                   )}
                 </Row>
