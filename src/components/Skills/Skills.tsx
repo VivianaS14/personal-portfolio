@@ -142,10 +142,6 @@ export const Skills = () => {
           <Col>
             <div className="skill-bx">
               <h2>Skills</h2>
-              <p>
-                Mostly of my skills are for the frontend development, but also I
-                have been prepared for the backend, stay tuned for the new ones.
-              </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
