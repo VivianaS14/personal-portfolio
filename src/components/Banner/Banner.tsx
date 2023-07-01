@@ -14,7 +14,7 @@ export const Banner = () => {
   const period = 2000;
 
   const toRotate = useMemo(
-    () => ["Frontend Developer", "Web Designer", "React Developer"],
+    () => ["Front-End Developer", "Web Designer", "React Developer"],
     []
   );
 
@@ -75,7 +75,7 @@ export const Banner = () => {
                   <p>
                     Frontend developer with over +6 months of experience
                     developing web applications with JavaScript, TypeScript and
-                    React. Music and Car lover.
+                    React. Music and Cat lover.
                   </p>
                   <button onClick={() => console.log("connect")}>
                     <a href="#projects">
