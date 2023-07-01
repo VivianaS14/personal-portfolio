@@ -35,10 +35,10 @@ export const FormContact = () => {
 
       emailjs
         .send(
-          "service_n11yh8i",
-          "template_kvlzdjq",
+          import.meta.env.VITE_SERVICE_ID,
+          import.meta.env.VITE_TEMPLATE_ID,
           formDetails,
-          "pEHCErpfN_HcVxsKr"
+          import.meta.env.VITE_PUBLIC_KEY
         )
         .then(
           (result: EmailJSResponseStatus) => setResult(result),
