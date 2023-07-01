@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import { ProjectCard } from "..";
 import "./Projects.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = useMemo(
@@ -100,45 +101,58 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <h2>Projects</h2>
-            <p>
-              Personal and group projects made it with React, JavaScript and
-              TypeScript.
-            </p>
-            <Tab.Container id="projects-tabs" defaultActiveKey="To Do App">
-              <Nav
-                variant="pills"
-                defaultActiveKey="/home"
-                className="mb-5 justify-content-center align-items-center"
-              >
-                {projects.map(({ title, id }) => (
-                  <Nav.Item key={id}>
-                    <Nav.Link eventKey={title}>{title}</Nav.Link>
-                  </Nav.Item>
-                ))}
-              </Nav>
-              <Tab.Content>
-                {projects.map(
-                  ({ description, id, imgURL, title, deploy, stack }) => (
-                    <Tab.Pane
-                      eventKey={title}
-                      key={id}
-                      className="tab-pane-proj"
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    Personal and group projects made it with React, JavaScript
+                    and TypeScript.
+                  </p>
+                  <Tab.Container
+                    id="projects-tabs"
+                    defaultActiveKey="To Do App"
+                  >
+                    <Nav
+                      variant="pills"
+                      defaultActiveKey="/home"
+                      className="mb-5 justify-content-center align-items-center"
                     >
-                      <Row className="justify-content-center">
-                        <ProjectCard
-                          title={title}
-                          description={description}
-                          imgUrl={imgURL}
-                          deploy={deploy}
-                          stack={stack}
-                        />
-                      </Row>
-                    </Tab.Pane>
-                  )
-                )}
-              </Tab.Content>
-            </Tab.Container>
+                      {projects.map(({ title, id }) => (
+                        <Nav.Item key={id}>
+                          <Nav.Link eventKey={title}>{title}</Nav.Link>
+                        </Nav.Item>
+                      ))}
+                    </Nav>
+                    <Tab.Content>
+                      {projects.map(
+                        ({ description, id, imgURL, title, deploy, stack }) => (
+                          <Tab.Pane
+                            eventKey={title}
+                            key={id}
+                            className="tab-pane-proj"
+                          >
+                            <Row className="justify-content-center">
+                              <ProjectCard
+                                title={title}
+                                description={description}
+                                imgUrl={imgURL}
+                                deploy={deploy}
+                                stack={stack}
+                              />
+                            </Row>
+                          </Tab.Pane>
+                        )
+                      )}
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
